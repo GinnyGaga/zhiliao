@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+<img src="{{ avatar|default("https://tvax4.sinaimg.cn/crop.0.0.180.180.50/006zOhLSly8fl1hq4sqwfj3050050q3x.jpg") }}" alt="">
+
+<hr>
+
+<p>评论数:({{ comments|length }})</p>
+<ul>
+    {% for comment in comments %}
+        <li>
+            <a href="#">{{ comment.user }}</a>
+            <p>{{ comment.comment }}</p>
+        </li>
+    {% endfor %}
+
+</ul>
+</body>
+</html>
